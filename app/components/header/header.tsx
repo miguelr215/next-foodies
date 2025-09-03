@@ -8,7 +8,7 @@ import HeaderBackground from '../header-bg/header-bg';
 
 const Header = () => {
 	return (
-		<>
+		<div className='relative'>
 			<HeaderBackground />
 			<header className={styles.header}>
 				<Link href="/" className={styles.logo}>
@@ -22,7 +22,7 @@ const Header = () => {
 					</ul>
 				</nav>
 			</header>
-		</>
+		</div>
 	)
 }
 
