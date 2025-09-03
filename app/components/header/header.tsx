@@ -3,21 +3,26 @@ import React from 'react'
 
 import logoImg from '@/assets/logo.png';
 import Image from 'next/image';
+import styles from './header.module.css';
+import HeaderBackground from '../header-bg/header-bg';
 
 const Header = () => {
 	return (
-		<header>
-			<Link href="/">
-				<Image src={logoImg.src} alt="logo" width={50} height={50} />
-				NextLevel Food
-			</Link>
-			<nav className='w-full md:w-1/2 bg-amber-100 p-3'>
-				<ul className='flex justify-center gap-4 md:gap-10'>
-					<li><Link href="/meals">Browse Meals</Link></li>
-					<li><Link href="/community">Foodies Community</Link></li>
-				</ul>
-			</nav>
-		</header>
+		<>
+			<HeaderBackground />
+			<header className={styles.header}>
+				<Link href="/" className={styles.logo}>
+					<Image src={logoImg} alt="logo" priority />
+					<span className='hidden sm:inline'>NextLevel Food</span>
+				</Link>
+				<nav className={styles.nav}>
+					<ul>
+						<li><Link href="/meals">Browse Meals</Link></li>
+						<li><Link href="/community">Foodies Community</Link></li>
+					</ul>
+				</nav>
+			</header>
+		</>
 	)
 }
 
