@@ -4,6 +4,7 @@ import { shareMeal } from '@/lib/actions';
 import styles from './page.module.css';
 import MealsFormSubmit from '@/app/components/meals/meals-form-submit';
 import { useActionState } from 'react';
+import ImagePicker from '@/app/components/meals/image-picker';
 
 export default function ShareMealPage() {
   const [state, formAction] = useActionState(shareMeal, { message: null })
@@ -46,7 +47,7 @@ export default function ShareMealPage() {
               required
             ></textarea>
           </p>
-          IMAGE PICKER
+          <ImagePicker label='Your Image' name='image' />
           <p className={styles.actions}>
             <MealsFormSubmit />
           </p>
